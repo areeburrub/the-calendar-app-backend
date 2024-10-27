@@ -11,10 +11,7 @@
     "skipLibCheck": true,
     "baseUrl": "."
   },
-  "include": [
-    "./api/**/*",
-    "./src/**/*"
-, "src/validators", "src/utils", "src/types", "src/subscribers", "src/routes", "src/prisma", "src/middlewares", "src/controllers", "src/config", "src/server.ts"  ],
+  "include": ["./src/**/*.ts"],
   "exclude": [
     "node_modules","dist",
   ]
