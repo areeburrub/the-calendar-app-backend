@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "typeRoots": [
+      "src/types"
+    ],
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "baseUrl": "."
+  },
+  "include": [
+    "./api/**/*",
+    "./src/**/*"
+, "src/validators", "src/utils", "src/types", "src/subscribers", "src/routes", "src/prisma", "src/middlewares", "src/controllers", "src/config", "src/server.ts"  ],
+  "exclude": [
+    "node_modules","dist",
+  ]
+}
