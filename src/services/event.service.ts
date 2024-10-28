@@ -1,12 +1,14 @@
-  import { PrismaClient, Event } from "@prisma/client";
+  import {  Event, PrismaClient } from "@prisma/client";
   import { ApiError } from "../utils/apiError";
   import { CreateEventDTO, UpdateEventDTO } from "../types/event.types";
+
+  import prisma from "../prisma";
 
   export class EventService {
     private prisma: PrismaClient;
 
     constructor() {
-      this.prisma = new PrismaClient();
+      this.prisma = prisma;
     }
 
     async findAll(userId: string): Promise<Event[]> {

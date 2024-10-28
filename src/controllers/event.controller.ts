@@ -1,3 +1,4 @@
+import { notifyUser } from "./../services/notification.service";
 import { Request, Response, NextFunction } from "express";
 import { EventService } from "../services/event.service";
 import { ApiError } from "../utils/apiError";
@@ -55,6 +56,13 @@ export class EventController {
         validatedData,
         req.auth.userId
       );
+
+      notifyUser(req.auth.userId, {
+        id: event.id,
+        title: "New Event Created",
+        description: event.title,
+      });
+
       res.status(201).json(event);
     } catch (error) {
       next(error);

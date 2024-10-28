@@ -5,7 +5,11 @@ import morgan from "morgan";
 import cors from "cors";
 import router from "./routes";
 
+import startReminderCron from "./cron/reminders.cron"
+
 dotenv.config();
+
+startReminderCron()
 
 export const app: Express = express();
 

@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { EventController } from "../controllers/event.controller";
-import { clerkMiddleware, requireAuth } from "@clerk/express";
+import { clerkMiddleware } from "@clerk/express";
 import dotenv from "dotenv";
 import { ApiError } from "../utils/apiError";
 
@@ -18,11 +18,11 @@ router.use(clerkMiddleware(), (req, res, next) => {
   }
 });
 
-// Base routes
+
 router.get("/", eventController.getEvents);
 router.post("/", eventController.createEvent);
 
-// Additional utility routes
+
 router.get("/upcoming", eventController.getUpcomingEvents);
 router.get("/range", eventController.getEventsInRange);
 
