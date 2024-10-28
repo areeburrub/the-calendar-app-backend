@@ -1,5 +1,8 @@
 import webpush from "web-push";
 import prisma from "../prisma";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const vapidKeys = {
   publicKey: process.env.VAPID_PUBLIC_KEY as string,
