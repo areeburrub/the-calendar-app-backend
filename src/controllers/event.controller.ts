@@ -128,7 +128,6 @@ export class EventController {
       const upcomingEvents = events
         .filter((event) => event.startTime > now)
         .sort((a, b) => a.startTime.getTime() - b.startTime.getTime())
-        .slice(0, 5);
 
       res.json(upcomingEvents);
     } catch (error) {
